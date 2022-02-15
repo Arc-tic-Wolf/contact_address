@@ -32,12 +32,11 @@ const EditProduct = () => {
         history.push("/");
     }
  
-    useEffect(() => {
-        getProductById();
-    }, []);
+    
  
     const getProductById = async () => {
         const response = await axios.get(`http://localhost:5000/products/${id}`);
+        
         setFirstname(response.data.firstname);
         setLastname(response.data.lastname);
         setCompany(response.data.company);
@@ -49,7 +48,11 @@ const EditProduct = () => {
         setStatename(response.data.statename);
         
     }
- 
+    
+    useEffect(() => {
+        getProductById();
+    }, []);
+    
     return (
         <div>
             <form onSubmit={ updateProduct }>

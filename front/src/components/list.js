@@ -6,7 +6,7 @@ const ProductList = () => {
     let [products, setProduct] = useState([]);
     let [search, setSearch]=useState([]);
     let [selected, setSelected]=useState(["city"]);
-    products=Array.from(products);
+    products=products;
     
     useEffect(() => {
         getProducts();
